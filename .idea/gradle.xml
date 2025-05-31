@@ -20,7 +20,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/build-logic" />
-            <option value="$PROJECT_DIR$/identity-service" />
+            <option value="$PROJECT_DIR$/profile-service" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="true" />
