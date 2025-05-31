@@ -4,4 +4,11 @@ pluginManagement {
 
 rootProject.name = 'whispr'
 
-include ':identity-service'
+
+// Scan for all subprojects
+var excludeProjects = ['build-logic']
+rootDir.listFiles().each { file ->
+    if (file.isDirectory() && !excludeProjects.contains(file.name) && new File("${file.path}/build.gradle").exists()) {
+        include file.name
+    }
+}
