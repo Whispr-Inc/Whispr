@@ -1,10 +1,7 @@
 pluginManagement {
-    includeBuild('build-logic')
+    includeBuild 'build-logic'
 }
 
 rootProject.name = 'whispr'
 
-
-// Include all subprojects
-
-include ':service-discovery'
+include ':identity-service'

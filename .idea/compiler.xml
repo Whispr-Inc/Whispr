@@ -7,9 +7,24 @@
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.36/5a30490a6e14977d97d9c73c924c1f1b5311ea95/lombok-1.18.36.jar" />
         </processorPath>
-        <module name="whispr.service-discovery.main" />
+        <module name="whispr.identity-service.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="17" />
+    <bytecodeTargetLevel target="21">
+      <module name="whispr.main" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="whispr.account-service" options="-parameters" />
+      <module name="whispr.account-service.main" options="-parameters" />
+      <module name="whispr.account-service.test" options="-parameters" />
+      <module name="whispr.identity-service" options="-parameters" />
+      <module name="whispr.identity-service.main" options="-parameters" />
+      <module name="whispr.identity-service.test" options="-parameters" />
+      <module name="whispr.management-service" options="-parameters" />
+      <module name="whispr.management-service.main" options="-parameters" />
+      <module name="whispr.management-service.test" options="-parameters" />
+    </option>
   </component>
 </project>

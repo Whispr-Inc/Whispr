@@ -1,8 +1,31 @@
+# Infrastructure for Whispr services
+
+# Project Name
 name: whispr
 
+# Services Configuration
 services:
-  db:
-    image: postgres:latest
+
+  # Authentication Server
+  auth-server:
+    image: quay.io/keycloak/keycloak:latest
+    ports:
+      - "9092:8080"
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin123
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://localhost:5432/whispr_db?currentSchema=keycloak
+      KC_DB_USERNAME: admin
+      KC_DB_PASSWORD: admin123
+    command:
+      - "start-dev"
+    depends_on:
+      - database
+
+  # Shared Database
+  database:
+    build: ./docker/db
     ports:
       - "5432:5432"
     environment:
@@ -12,10 +35,5 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
 
-networks:
-  default:
-    driver: bridge
-
 volumes:
-  db_data:
-    driver: local
+  db_data:    # Named volume for persistent database storage
