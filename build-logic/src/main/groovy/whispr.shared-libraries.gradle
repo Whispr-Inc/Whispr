@@ -1,0 +1,10 @@
+plugins {
+    id 'whispr.base-config'
+    id 'java-library'
+}
+
+/// Additional Dependencies and Dependency Management
+
+dependencies {
+    // No additional dependencies for shared libraries
+}

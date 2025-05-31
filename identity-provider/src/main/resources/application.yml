@@ -1,6 +1,6 @@
 spring:
   application:
-    name: account-service
+    name: identity-provider
 
   datasource:
     url: jdbc:postgresql://localhost:5432/whispr_db
