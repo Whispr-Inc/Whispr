@@ -1,7 +1,0 @@
-plugins {
-    id 'whispr.shared-libraries'
-}
-
-dependencies {
-
-}
