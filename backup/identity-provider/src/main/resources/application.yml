@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: identity-provider
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/whispr_db
+    username: admin
+    password: admin123
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  flyway:
+    enabled: false
+    baseline-on-migrate: true

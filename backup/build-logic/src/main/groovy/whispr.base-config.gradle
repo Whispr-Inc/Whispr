@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id 'io.spring.dependency-management'
+}
+
+group = 'org.whispr.project'
+version = '0.0.2-SNAPSHOT'
+
+
+/// Java Configuration
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+compileJava {
+    options.release = 21
+}
+
+
+/// Repositories and Dependency Management
+
+repositories {
+    mavenCentral()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.boot:spring-boot-dependencies:3.4.4'
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:2024.0.1'
+    }
+}
+
+
+/// Test Configuration
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
