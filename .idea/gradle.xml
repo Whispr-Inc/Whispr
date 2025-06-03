@@ -21,6 +21,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/build-logic" />
             <option value="$PROJECT_DIR$/service-discovery" />
+            <option value="$PROJECT_DIR$/shared" />
+            <option value="$PROJECT_DIR$/shared/jpa-config" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="true" />
