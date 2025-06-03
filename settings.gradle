@@ -1,0 +1,7 @@
+pluginManagement {
+    includeBuild 'build-logic'
+}
+
+rootProject.name = 'whispr-social-media'
+
+include ':service-discovery'

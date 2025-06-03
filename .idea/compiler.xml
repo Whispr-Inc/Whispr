@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.6">
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.36/5a30490a6e14977d97d9c73c924c1f1b5311ea95/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="whispr-social-media.service-discovery.main" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="21">
       <module name="whispr.main" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="whispr-social-media.service-discovery" options="-parameters" />
+      <module name="whispr-social-media.service-discovery.main" options="-parameters" />
+      <module name="whispr-social-media.service-discovery.test" options="-parameters" />
       <module name="whispr.account-service" options="-parameters" />
       <module name="whispr.account-service.main" options="-parameters" />
       <module name="whispr.account-service.test" options="-parameters" />
