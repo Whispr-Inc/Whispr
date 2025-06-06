@@ -1,4 +1,4 @@
-package com.whispr.persistence.dao.entity;
+package com.whispr.persistence.entity;
 
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
@@ -18,5 +18,5 @@ public abstract class BaseEntity implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
-    
+
 }

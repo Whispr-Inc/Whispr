@@ -9,7 +9,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Configuration
-@EnableJpaAuditing(auditorAwareRef = "auditorProvider")
+@EnableJpaAuditing(auditorAwareRef = "auditorProvider", modifyOnCreate = true)
 public class JpaAuditConfig {
 
     @Bean
