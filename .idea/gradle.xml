@@ -19,10 +19,12 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/api-gateway" />
             <option value="$PROJECT_DIR$/build-logic" />
+            <option value="$PROJECT_DIR$/profile-service" />
             <option value="$PROJECT_DIR$/service-discovery" />
             <option value="$PROJECT_DIR$/shared" />
-            <option value="$PROJECT_DIR$/shared/jpa-config" />
+            <option value="$PROJECT_DIR$/shared/jpa-support" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="true" />

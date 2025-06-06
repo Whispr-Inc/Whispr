@@ -4,6 +4,7 @@ pluginManagement {
 
 rootProject.name = 'whispr'
 
+include ':api-gateway'
 include ':service-discovery'
-
-include ':shared:jpa-config'
+include ':profile-service'
+include ':shared:jpa-support'

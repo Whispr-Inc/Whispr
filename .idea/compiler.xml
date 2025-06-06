@@ -7,8 +7,10 @@
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.36/5a30490a6e14977d97d9c73c924c1f1b5311ea95/lombok-1.18.36.jar" />
         </processorPath>
-        <module name="whispr.shared.jpa-config.main" />
+        <module name="whispr.shared.jpa-support.main" />
         <module name="whispr.service-discovery.main" />
+        <module name="whispr.api-gateway.main" />
+        <module name="whispr.profile-service.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="21">
@@ -23,6 +25,9 @@
       <module name="whispr.account-service" options="-parameters" />
       <module name="whispr.account-service.main" options="-parameters" />
       <module name="whispr.account-service.test" options="-parameters" />
+      <module name="whispr.api-gateway" options="-parameters" />
+      <module name="whispr.api-gateway.main" options="-parameters" />
+      <module name="whispr.api-gateway.test" options="-parameters" />
       <module name="whispr.identity-provider" options="-parameters" />
       <module name="whispr.identity-provider.main" options="-parameters" />
       <module name="whispr.identity-provider.test" options="-parameters" />
