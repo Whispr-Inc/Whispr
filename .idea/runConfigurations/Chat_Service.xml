@@ -1,11 +1,11 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="ProfileServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+  <configuration default="false" name="Chat Service" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
     <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-    <module name="whispr.profile-service.main" />
-    <option name="SPRING_BOOT_MAIN_CLASS" value="com.whispr.profile.ProfileServiceApplication" />
+    <module name="whispr.chat-service.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.whispr.chat.MessageServiceApplication" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="com.whispr.profile.*" />
+        <option name="PATTERN" value="com.whispr.chat.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

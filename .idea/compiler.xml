@@ -7,10 +7,11 @@
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.36/5a30490a6e14977d97d9c73c924c1f1b5311ea95/lombok-1.18.36.jar" />
         </processorPath>
+        <module name="whispr.identity-provider.user-service.main" />
         <module name="whispr.shared.jpa-support.main" />
         <module name="whispr.service-discovery.main" />
         <module name="whispr.api-gateway.main" />
-        <module name="whispr.profile-service.main" />
+        <module name="whispr.chat-service.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="21">
@@ -28,16 +29,23 @@
       <module name="whispr.api-gateway" options="-parameters" />
       <module name="whispr.api-gateway.main" options="-parameters" />
       <module name="whispr.api-gateway.test" options="-parameters" />
-      <module name="whispr.identity-provider" options="-parameters" />
+      <module name="whispr.chat-service" options="-parameters" />
+      <module name="whispr.chat-service.main" options="-parameters" />
+      <module name="whispr.chat-service.test" options="-parameters" />
       <module name="whispr.identity-provider.main" options="-parameters" />
       <module name="whispr.identity-provider.test" options="-parameters" />
+      <module name="whispr.identity-provider.user-service" options="-parameters" />
+      <module name="whispr.identity-provider.user-service.main" options="-parameters" />
+      <module name="whispr.identity-provider.user-service.test" options="-parameters" />
       <module name="whispr.identity-service" options="-parameters" />
       <module name="whispr.identity-service.main" options="-parameters" />
       <module name="whispr.identity-service.test" options="-parameters" />
       <module name="whispr.management-service" options="-parameters" />
       <module name="whispr.management-service.main" options="-parameters" />
       <module name="whispr.management-service.test" options="-parameters" />
-      <module name="whispr.profile-service" options="-parameters" />
+      <module name="whispr.message-service" options="-parameters" />
+      <module name="whispr.message-service.main" options="-parameters" />
+      <module name="whispr.message-service.test" options="-parameters" />
       <module name="whispr.profile-service.main" options="-parameters" />
       <module name="whispr.profile-service.test" options="-parameters" />
       <module name="whispr.service-discovery" options="-parameters" />

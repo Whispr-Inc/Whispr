@@ -2,6 +2,7 @@ spring:
   application:
     name: api-gateway
 
+
 eureka:
   client:
     register-with-eureka: true

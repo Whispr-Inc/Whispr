@@ -6,5 +6,6 @@ rootProject.name = 'whispr'
 
 include ':api-gateway'
 include ':service-discovery'
-include ':profile-service'
+include ':chat-service'
+include ':identity-provider:user-service'
 include ':shared:jpa-support'
