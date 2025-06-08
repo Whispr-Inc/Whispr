@@ -1,9 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Whispr All" type="CompoundRunConfigurationType">
-    <toRun name="Keycloak Server" type="ShConfigurationType" />
-    <toRun name="Api Gateway" type="SpringBootApplicationConfigurationType" />
-    <toRun name="Eureka Server" type="SpringBootApplicationConfigurationType" />
-    <toRun name="Message Service" type="SpringBootApplicationConfigurationType" />
-    <method v="2" />
-  </configuration>
-</component>

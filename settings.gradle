@@ -1,11 +1,1 @@
-pluginManagement {
-    includeBuild 'build-logic'
-}
-
 rootProject.name = 'whispr'
-
-include ':api-gateway'
-include ':service-discovery'
-include ':chat-service'
-include ':identity-provider:user-service'
-include ':shared:jpa-support'

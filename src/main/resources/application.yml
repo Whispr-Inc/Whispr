@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: whispr-backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/whispr_db
+    username: postgres
+    password: postgres
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  flyway:
+    enabled: false
+
+  servlet:
+    multipart:
+      max-file-size: 50MB
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/whatsapp-clone
+
+server:
+  port: 8080
