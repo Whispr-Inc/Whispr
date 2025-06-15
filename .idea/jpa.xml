@@ -3,7 +3,7 @@
   <component name="JpaBuddyIdeaProjectConfig">
     <option name="newEntityIdStrategy" value="UUID" />
     <option name="newEntityIdType" value="UUID" />
-    <option name="reLastEntityCreationPackage" value="identity-provider/src/main/java/org/whispr/identity/dao/entity" />
+    <option name="reLastEntityCreationPackage" value="src/main/java/com/whispr/prototype/entity" />
     <option name="reverseEngineeringLastDbConnectionId" value="3209ec54-6899-4f3b-97ac-16dc9791446e" />
   </component>
 </project>

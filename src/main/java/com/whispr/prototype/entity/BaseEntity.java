@@ -1,11 +1,16 @@
 package com.whispr.prototype.entity;
 
-import jakarta.persistence.EntityListeners;
-import jakarta.persistence.MappedSuperclass;
+import com.whispr.prototype.utils.HibernateUtil;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.proxy.HibernateProxy;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.Objects;
+import java.util.UUID;
 
 /**
  * Base entity class that provides common properties and behavior for all entities.
@@ -19,4 +24,29 @@ public abstract class BaseEntity implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
+
+    public abstract UUID getId();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null) return false;
+        if (!(o instanceof BaseEntity that)) return false;
+
+        Class<?> oEffectiveClass = HibernateUtil.getPersistanceClass(that);
+        Class<?> thisEffectiveClass = HibernateUtil.getPersistanceClass(this);
+        if (thisEffectiveClass != oEffectiveClass) return false;
+
+        return getId() != null && Objects.equals(getId(), that.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return HibernateUtil.getPersistanceClass(this).hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return HibernateUtil.getPersistanceClass(this).getSimpleName() + " [" + "id=" + getId() + ']';
+    }
 }

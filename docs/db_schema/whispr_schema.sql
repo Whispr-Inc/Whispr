@@ -18,14 +18,14 @@ $$ language 'plpgsql';
 -- Chat Service Schema
 -- --------------------------------------------------------------------------
 
-CREATE TABLE lu_conversation_type (
+CREATE TABLE lu_chat_type (
     id smallint NOT NULL,
     name varchar(128),
-    CONSTRAINT lu_conversation_type_pk PRIMARY KEY (id)
+    CONSTRAINT lu_chat_type_pk PRIMARY KEY (id)
 );
 
 INSERT INTO
-    lu_conversation_type (id, name)
+    lu_chat_type (id, name)
 VALUES
     (1, 'PRIVATE'),
     (2, 'GROUP'),
@@ -54,36 +54,36 @@ VALUES
     (10, 'SYSTEM');
 
 
-CREATE TABLE conversations (
+CREATE TABLE chats (
     id uuid NOT NULL DEFAULT gen_random_uuid(),
     type smallint NOT NULL,
     title varchar(128),
     created_at timestamp with time zone NOT NULL DEFAULT now(),
     created_by uuid NOT NULL,
     deleted_at timestamp with time zone,
-    CONSTRAINT conversation_pk PRIMARY KEY (id),
-    CONSTRAINT conversation_type_fk FOREIGN KEY (type) REFERENCES lu_conversation_type (id)
+    CONSTRAINT chat_pk PRIMARY KEY (id),
+    CONSTRAINT chat_type_fk FOREIGN KEY (type) REFERENCES lu_chat_type (id)
 );
 
-CREATE TABLE participants (
+CREATE TABLE members (
     id uuid NOT NULL DEFAULT gen_random_uuid(),
-    conversation_id uuid NOT NULL,
+    chat_id uuid NOT NULL,
     account_id uuid NOT NULL,
     is_admin boolean NOT NULL DEFAULT false,
     is_muted boolean NOT NULL DEFAULT false,
     joined_at timestamp with time zone NOT NULL DEFAULT now(),
     left_at timestamp with time zone,
-    CONSTRAINT participant_pk PRIMARY KEY (id),
-    CONSTRAINT participant_conversation_fk FOREIGN KEY (conversation_id) REFERENCES conversations (id)
+    CONSTRAINT member_pk PRIMARY KEY (id),
+    CONSTRAINT member_chat_fk FOREIGN KEY (chat_id) REFERENCES chats (id)
 );
 
-CREATE UNIQUE INDEX participant_unique_idx ON participants (conversation_id, account_id);
-CREATE INDEX participant_conversation_idx ON participants (conversation_id);
+CREATE UNIQUE INDEX member_unique_idx ON members (chat_id, account_id);
+CREATE INDEX member_chat_idx ON members (chat_id);
 
 
 CREATE TABLE messages (
     id uuid NOT NULL DEFAULT gen_random_uuid(),
-    conversation_id uuid NOT NULL,
+    chat_id uuid NOT NULL,
     sender_id uuid NOT NULL,
     content text NOT NULL,
     type smallint,
@@ -93,12 +93,12 @@ CREATE TABLE messages (
     edited_at timestamp with time zone,
     deleted_at timestamp with time zone,
     CONSTRAINT message_pk PRIMARY KEY (id),
-    CONSTRAINT message_conversation_fk FOREIGN KEY (conversation_id) REFERENCES conversations (id),
+    CONSTRAINT message_chat_fk FOREIGN KEY (chat_id) REFERENCES chats (id),
     CONSTRAINT message_type_fk FOREIGN KEY (type) REFERENCES lu_message_type (id),
-    CONSTRAINT message_sender_fk FOREIGN KEY (sender_id) REFERENCES participants (id)
+    CONSTRAINT message_sender_fk FOREIGN KEY (sender_id) REFERENCES members (id)
 );
 
-CREATE INDEX message_conversation_idx ON messages (conversation_id);
+CREATE INDEX message_chat_idx ON messages (chat_id);
 
 
 CREATE TABLE message_receipts (
@@ -109,7 +109,7 @@ CREATE TABLE message_receipts (
     delivered_at timestamp with time zone,
     CONSTRAINT message_receipt_pk PRIMARY KEY (id),
     CONSTRAINT message_receipt_message_fk FOREIGN KEY (message_id) REFERENCES messages (id) ON DELETE CASCADE,
-    CONSTRAINT message_receipt_receiver_fk FOREIGN KEY (receiver_id) REFERENCES participants (id)
+    CONSTRAINT message_receipt_receiver_fk FOREIGN KEY (receiver_id) REFERENCES members (id)
 );
 
 CREATE UNIQUE INDEX message_receipt_unique_idx ON message_receipts (message_id, receiver_id);
