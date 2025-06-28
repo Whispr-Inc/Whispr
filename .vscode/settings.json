@@ -1,0 +1,6 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "explorer.excludeGitIgnore": true,
+    "java.project.outputPath": "build",
+    "java.configuration.updateBuildConfiguration": "automatic",
+}
