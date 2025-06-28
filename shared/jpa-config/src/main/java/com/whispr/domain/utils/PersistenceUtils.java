@@ -1,11 +1,11 @@
-package com.whispr.prototype.utils;
+package com.whispr.domain.utils;
 
-import com.whispr.prototype.entity.BaseEntity;
+import com.whispr.domain.entity.BaseEntity;
 import org.hibernate.proxy.HibernateProxy;
 
-public class HibernateUtil {
+public class PersistenceUtils {
 
-    private HibernateUtil() {
+    private PersistenceUtils() {
     }
 
     /**

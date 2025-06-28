@@ -1,0 +1,10 @@
+plugins {
+    id 'whispr-service'
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation project(':shared:jpa-config')
+    implementation project(':shared:security-config')
+}

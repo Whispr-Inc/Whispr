@@ -1,1 +1,9 @@
+pluginManagement {
+    includeBuild 'build-logic'
+}
+
 rootProject.name = 'whispr'
+
+include ':messenger-service'
+include ':shared:jpa-config'
+include ':shared:security-config'
