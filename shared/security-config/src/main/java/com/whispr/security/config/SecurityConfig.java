@@ -1,7 +1,6 @@
 package com.whispr.security.config;
 
 import com.whispr.security.interfaces.SecurityCustomizer;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;

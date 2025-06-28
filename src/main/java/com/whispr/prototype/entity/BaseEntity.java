@@ -2,9 +2,6 @@ package com.whispr.prototype.entity;
 
 import com.whispr.prototype.utils.HibernateUtil;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import org.hibernate.proxy.HibernateProxy;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.io.Serial;

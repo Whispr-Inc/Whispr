@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "MessengerApplication",
+            "type": "java",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.whispr.messenger.MessengerApplication",
+            "projectName": "messenger-service",
+            "args": "",
+        },
+        {
+            "name": "Keycloak",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "/opt/keycloak/bin/kc.sh start-dev",
+            "cwd": "/opt/keycloak/bin",
+        }
+    ]
+}
