@@ -1,5 +1,7 @@
-package com.whispr.prototype.entity;
+package com.whispr.messenger.entity;
 
+import com.whispr.domain.entity.BaseEntity;
+import com.whispr.messenger.enums.ChatType;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,21 +22,21 @@ public class Chat extends BaseEntity {
     @Column(name = "id", nullable = false)
     private UUID id;
 
+    @Enumerated
     @Column(name = "type", nullable = false)
-    private Short type;
+    private ChatType type;
 
-    @Column(name = "title", length = 128)
+    @Column(name = "title")
     private String title;
 
     @CreatedDate
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "created_at", nullable = false, updatable = false)
     private Instant createdAt;
 
     @CreatedBy
-    @Column(name = "created_by", nullable = false)
+    @Column(name = "created_by", nullable = false, updatable = false)
     private UUID createdBy;
 
     @Column(name = "deleted_at")
     private Instant deletedAt;
-
 }

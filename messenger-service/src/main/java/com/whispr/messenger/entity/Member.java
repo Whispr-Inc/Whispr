@@ -1,5 +1,6 @@
-package com.whispr.prototype.entity;
+package com.whispr.messenger.entity;
 
+import com.whispr.domain.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
