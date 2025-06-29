@@ -59,6 +59,8 @@ public class SecurityConfig {
     @Bean
     public SecurityCustomizer defaultSecurityCustomizer() {
         return (registry) -> {
+            // Default security configuration that requires authentication for all requests
+            // TODO: Add more urls for public access like swagger-ui, health checks, etc.
             registry.anyRequest().authenticated();
         };
     }

@@ -1,6 +1,7 @@
 package com.whispr.messenger.entity;
 
 import com.whispr.domain.entity.BaseEntity;
+import com.whispr.messenger.enums.MessageType;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -34,8 +35,9 @@ public class Message extends BaseEntity {
     @Column(name = "content", nullable = false, length = Integer.MAX_VALUE)
     private String content;
 
+    @Enumerated
     @Column(name = "type")
-    private Short type;
+    private MessageType type;
 
     @Column(name = "thumbnail_url", length = 256)
     private String thumbnailUrl;
