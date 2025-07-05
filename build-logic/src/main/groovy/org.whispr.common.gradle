@@ -1,7 +1,7 @@
 plugins {
+    id 'io.spring.dependency-management'
     id 'java'
     id 'idea'
-    id 'io.spring.dependency-management'
 }
 
 group = 'com.whispr'
@@ -32,7 +32,7 @@ dependencies {
 dependencyManagement {
     imports {
         mavenBom 'org.springframework.boot:spring-boot-dependencies:3.5.3'
-        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:2024.0.1'
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:2025.0.0'
     }
 }
 

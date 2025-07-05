@@ -7,4 +7,6 @@ dependencies {
 
     implementation project(':shared:jpa-config')
     implementation project(':shared:security-config')
+
+    testImplementation 'org.springframework.security:spring-security-test'
 }

@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <annotationProcessing>
-      <profile name="Gradle Imported" enabled="true">
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.38/57f8f5e02e92a30fd21b80cbd426a4172b5f8e29/lombok-1.18.38.jar" />
-        </processorPath>
-        <module name="whispr.shared.security-config.main" />
-        <module name="whispr.shared.jpa-config.main" />
-        <module name="whispr.messenger-service.main" />
-      </profile>
-    </annotationProcessing>
-    <bytecodeTargetLevel target="21" />
+    <bytecodeTargetLevel target="1.6" />
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="com.whispr.whispr.message-service.main" options="-parameters" />
+      <module name="com.whispr.whispr.message-service.test" options="-parameters" />
       <module name="whispr-social-media.service-discovery" options="-parameters" />
       <module name="whispr-social-media.service-discovery.main" options="-parameters" />
       <module name="whispr-social-media.service-discovery.test" options="-parameters" />
@@ -47,7 +38,6 @@
       <module name="whispr.messenger-service.test" options="-parameters" />
       <module name="whispr.profile-service.main" options="-parameters" />
       <module name="whispr.profile-service.test" options="-parameters" />
-      <module name="whispr.service-discovery" options="-parameters" />
       <module name="whispr.service-discovery.main" options="-parameters" />
       <module name="whispr.service-discovery.test" options="-parameters" />
       <module name="whispr.test" options="-parameters" />

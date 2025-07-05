@@ -1,4 +1,4 @@
 plugins {
-    id 'whispr-common'
+    id 'org.whispr.common'
     id 'java-library'
 }
